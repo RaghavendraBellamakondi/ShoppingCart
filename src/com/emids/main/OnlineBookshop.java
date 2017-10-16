@@ -3,11 +3,8 @@ package com.emids.main;
 
 import java.util.Scanner;
 
-import com.emids.domain.Customer;
 import com.emids.domain.Products;
 import com.emids.service.CustomerBookShelf;
-import com.emids.service.Order;
-import com.emids.service.ShopingCart;
 
 public class OnlineBookshop {
 	Scanner scanner = new Scanner(System.in);
@@ -25,7 +22,7 @@ public class OnlineBookshop {
 		} else if (bookname.equalsIgnoreCase("my autograph") && authorName.equalsIgnoreCase("rama")) {
 			customer.list.add(Products.book);
 		} else
-			System.out.println("please enter valid book name and auther name ");
+			System.out.println("please Enter valid book name and auther name ");
 	}
 
 	void showAll(boolean valid) {
@@ -57,7 +54,7 @@ public class OnlineBookshop {
 				System.out.println("please Enter book author as mentioned above");
 				String authorName = scanner1.nextLine();
 				OnlineBookshop.buyBook(bookname, authorName);
-				System.out.println("u want to save some more please Enter 1 else enter 0");
+				System.out.println("you want to save some more please Enter 1 else Enter 0");
 				int o = scanner1.nextInt();
 				buy = o;
 			}
@@ -66,33 +63,6 @@ public class OnlineBookshop {
 			System.out.println("thank you");
 			System.exit(0);
 		}
-	}
-
-	void toOrder() {
-		System.out.println("these are  selected ur books");
-
-		CustomerBookShelf.CustomerbookShelf1.get();
-		System.out.println("you want to alter the things if yes please press 1 else press 0");
-
-		int alter = scanner.nextInt();
-		if (alter == 1) {
-			CustomerBookShelf.CustomerbookShelf1.modify();
-		}
-
-		ShopingCart cart = new ShopingCart();
-		int selection = cart.add();
-		if (selection != 0) {
-			System.out.println("please give your information");
-			Customer customer1 = new Customer();
-			boolean result = customer1.details();
-			if (result) {
-				Order order1 = new Order();
-				order1.placeOrder(customer1);
-			} else {
-				System.out.println("Problem in ordering ");
-			}
-		}
-
 	}
 
 }

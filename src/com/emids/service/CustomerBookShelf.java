@@ -17,7 +17,7 @@ public class CustomerBookShelf {
 		Scanner scanner = new Scanner(System.in);
 		boolean condition = true;
 		while (condition) {
-			System.out.println("please enter which one you want to delete press according to this[0,1,2,...] ");
+			System.out.println("please Enter which one you want to delete press according to this[0,1,2,...] ");
 			int index = scanner.nextInt();
 			list.remove(index);
 			System.out.println("you want to remove again if yes please Enter 1 else 0");

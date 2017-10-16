@@ -8,7 +8,6 @@ public class Customer implements User {
 	private String street;
 	private String city;
 	private String state;
-	private long password = 12345l;
 
 	public boolean details() {
 		Scanner scanner = new Scanner(System.in);
@@ -55,12 +54,11 @@ public class Customer implements User {
 		return state;
 	}
 
-	@Override
 	public boolean getValidation() {
 		System.out.println("please enter the user name and pass word");
 		Scanner scanner = new Scanner(System.in);
 		String name = scanner.next();
-		long password = scanner.nextLong();
-		return (name.equals("Raghavendra") && password == 12345l);
+		long password1 = scanner.nextLong();
+		return (name.equals("Raghavendra") && password1 == 12345l);
 	}
 }

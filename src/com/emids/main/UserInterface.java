@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.emids.domain.Customer;
 import com.emids.domain.User;
+import com.emids.service.Order;
 
 public class UserInterface {
 	public static void main(String[] args) {
@@ -29,11 +30,14 @@ public class UserInterface {
 					shop.buyProducts();
 					break;
 				case 4:
-					shop.toOrder();
+					Order order1 = new Order();
+					order1.toOrder();
 					break;
 				case 5:
 					System.out.println("thank you ....");
 					condition = false;
+					System.exit(0);
+				default:
 					System.exit(0);
 				}
 				System.out.println("\n");
